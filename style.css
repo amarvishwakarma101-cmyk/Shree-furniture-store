@@ -1,1 +1,153 @@
-body{font-family:Arial;margin:20px}nav a{margin:8px}
+/* =====================================
+   Shree Furniture V3 - Premium CSS
+   Part 1
+====================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f7f3ed;
+    color:#333;
+    line-height:1.7;
+}
+
+/* Container */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* Header */
+
+.header{
+    position:sticky;
+    top:0;
+    background:#4e342e;
+    padding:15px 0;
+    z-index:999;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.header .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo h2{
+    color:#FFD700;
+    font-size:30px;
+}
+
+.logo span{
+    color:#fff;
+    font-size:14px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#fff;
+    font-weight:600;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#FFD700;
+}
+
+/* Buttons */
+
+.call-btn,
+.btn{
+    display:inline-block;
+    background:#FFD700;
+    color:#4e342e;
+    padding:12px 24px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.call-btn:hover,
+.btn:hover{
+    background:#fff;
+    transform:translateY(-3px);
+}
+
+/* Hero */
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url("images/hero.jpg") center/cover;
+    color:#fff;
+}
+
+.hero h1{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+    margin-bottom:30px;
+}
+
+.hero-buttons a{
+    margin:10px;
+}
+
+/* Features */
+
+.features{
+    padding:80px 0;
+}
+
+.features .container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:25px;
+}
+
+.feature-box{
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.feature-box:hover{
+    transform:translateY(-10px);
+}
+
+.feature-box h3{
+    color:#4e342e;
+    margin-bottom:15px;
+}
