@@ -71,6 +71,7 @@ header a[href*="wa.me"]{
     cursor:pointer;
     transition:.3s;
 }
+}
 
 .hero h2{
     font-size:48px;
