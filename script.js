@@ -1,69 +1,116 @@
-// Back To Top Button
-const topBtn = document.createElement("button");
-topBtn.id = "topBtn";
-topBtn.innerHTML = "↑";
-document.body.appendChild(topBtn);
+// ==========================
+// SHREE FURNITURE
+// Premium Script
+// ==========================
 
-window.addEventListener("scroll", () => {
-    if(window.scrollY > 300){
-        topBtn.style.display = "block";
-    }else{
-        topBtn.style.display = "none";
-    }
+// Smooth Scroll
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute('href'));
+
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
 });
 
-topBtn.addEventListener("click", () => {
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
+// Sticky Header Shadow
+window.addEventListener('scroll', function () {
+
+    const header = document.querySelector("header");
+
+    if (window.scrollY > 50) {
+        header.style.boxShadow = "0 5px 20px rgba(0,0,0,0.15)";
+    } else {
+        header.style.boxShadow = "0 3px 15px rgba(0,0,0,0.08)";
+    }
+
+});
+
+// Back To Top Button
+
+const backTop = document.querySelector(".back-top");
+
+window.addEventListener("scroll", function () {
+
+    if (window.scrollY > 300) {
+
+        backTop.style.display = "flex";
+
+    } else {
+
+        backTop.style.display = "none";
+
+    }
+
+});
+
+// Product Hover Animation
+
+const cards = document.querySelectorAll(".product-card");
+
+cards.forEach(card => {
+
+    card.addEventListener("mouseenter", () => {
+
+        card.style.transform = "translateY(-10px)";
+
     });
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.transform = "translateY(0px)";
+
+    });
+
+});
+
+// Gallery Popup
+
+const gallery = document.querySelectorAll(".gallery-grid img");
+
+gallery.forEach(img => {
+
+    img.addEventListener("click", function () {
+
+        window.open(this.src);
+
+    });
+
+});
+
+// Loading Animation
+
+window.addEventListener("load", function () {
+
+    document.body.style.opacity = "1";
+
 });
 
 // Fade Animation
-const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
+
+const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
         if(entry.isIntersecting){
-    entry.target.classList.add("show");
-    observer.unobserve(entry.target);
-}
+
+            entry.target.classList.add("show");
+
+        }
+
     });
+
 });
 
-document.querySelectorAll("section, .cats div").forEach(el=>{
-    el.classList.add("fade");
-    observer.observe(el);
+document.querySelectorAll("section").forEach(sec=>{
+
+    observer.observe(sec);
+
 });
 
-// Image Popup
-document.querySelectorAll(".gallery-grid img").forEach(img=>{
-    img.addEventListener("click",()=>{
-        const popup = document.createElement("div");
-
-        popup.style.position="fixed";
-        popup.style.top="0";
-        popup.style.left="0";
-        popup.style.width="100%";
-        popup.style.height="100%";
-        popup.style.background="rgba(0,0,0,0.9)";
-        popup.style.display="flex";
-        popup.style.justifyContent="center";
-        popup.style.alignItems="center";
-        popup.style.zIndex="9999";
-
-        const image = document.createElement("img");
-        image.src = img.src;
-        image.style.maxWidth="90%";
-        image.style.maxHeight="90%";
-
-        popup.appendChild(image);
-
-        popup.addEventListener("click",()=>{
-            popup.remove();
-        });
-
-        document.body.appendChild(popup);
-    });
-});
-
-// Console Message
-console.log("Shree Furnichar Website Loaded Successfully");
+console.log("SHREE FURNITURE Website Loaded Successfully");
