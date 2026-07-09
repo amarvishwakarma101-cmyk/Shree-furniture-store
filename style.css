@@ -480,5 +480,46 @@ margin-top:30px;
 display:inline-block;
 margin-top:15px;
 }
+.logo img{
+width:180px;
+display:block;
+margin:auto;
+}
 
+nav{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:18px;
+}
+
+.hero{
+padding:40px 0;
+}
+
+.hero-image img{
+width:100%;
+border-radius:15px;
+display:block;
+}
+
+@media(max-width:768px){
+
+.logo img{
+width:140px;
+}
+
+nav{
+gap:12px;
+font-size:18px;
+}
+
+.call-btn{
+display:block;
+width:220px;
+margin:20px auto;
+text-align:center;
+}
+
+}
 }
