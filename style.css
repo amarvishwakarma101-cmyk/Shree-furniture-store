@@ -523,3 +523,68 @@ text-align:center;
 
 }
 }
+/* ===== MOBILE HERO FIX ===== */
+
+.logo img{
+    width:220px;
+    max-width:100%;
+    display:block;
+    margin:auto;
+}
+
+.hero{
+    padding:40px 20px;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.hero-content{
+    order:1;
+}
+
+.hero-image{
+    order:2;
+}
+
+.hero-image img{
+    width:100%;
+    border-radius:20px;
+}
+
+@media(max-width:768px){
+
+.hero-grid{
+    grid-template-columns:1fr;
+}
+
+.hero-content{
+    order:1;
+    text-align:center;
+}
+
+.hero-image{
+    order:2;
+    margin-top:25px;
+}
+
+.hero h1{
+    font-size:38px;
+}
+
+.hero-buttons{
+    justify-content:center;
+}
+
+nav{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+}
